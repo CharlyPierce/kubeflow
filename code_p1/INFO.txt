@@ -1,0 +1,26 @@
+#instalar versiones de python
+pyenv install 3.7.12
+#Crear un entorno virtual con esa version
+pyenv virtualenv 3.7.12 nombre_del_entorno
+#Activar y desactivar entorno virtual
+pyenv activate nombre_del_entorno
+pyenv deactivate
+#actualizar pip
+python3.7 -m pip install --upgrade pip
+
+#Ver entornos virtuales
+pyenv virtualenvs
+
+#Usar kernel de un entorno virtual en jupyter=notebook
+pyenv activate nombre_del_entorno
+pip install ipykernel
+python -m ipykernel install --user --name=nombre_de_tu_entorno
+jupyter-notebook
+
+#Una vez que Jupyter Notebook esté en funcionamiento, crea un nuevo notebook o abre uno existente. 
+#Haz clic en el menú "Kernel" en la parte superior, luego "Change kernel", y selecciona el 
+#kernel que acabas de agregar (debería tener el nombre que especificaste en el paso 3).
+
+#Remover kernel
+jupyter kernelspec list
+jupyter kernelspec remove nombre_del_kernel_con_problemas
